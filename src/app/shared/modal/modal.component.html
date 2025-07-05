@@ -1,0 +1,17 @@
+<div class="modal-container" (click)="backDropDismiss()">
+  @if (!isClosing) {
+    <div
+      @deskModalAnimation
+      class="modal-content"
+      (click)="stopPropagation($event)"
+      (@deskModalAnimation.done)="onAnimationDone()"
+    >
+      <fa-icon
+        class="close-modal"
+        [icon]="['fas', 'close']"
+        (click)="closeModal()"
+      ></fa-icon>
+      <ng-content></ng-content>
+    </div>
+  }
+</div>

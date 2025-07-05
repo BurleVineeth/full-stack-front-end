@@ -1,0 +1,29 @@
+.image-container {
+  position: relative;
+
+  .image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+
+    &.image-loading {
+      opacity: 0;
+    }
+  }
+
+  .image-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

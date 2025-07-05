@@ -1,0 +1,20 @@
+<div class="image-container">
+  @if (isImageLoading) {
+    <div class="image-loader">Loading image...</div>
+  }
+
+  @if (fill()) {
+  } @else {
+    <img
+      [ngSrc]="src()"
+      [width]="width()"
+      [height]="height()"
+      [sizes]="sizes()"
+      [priority]="priority()"
+      [alt]="alt()"
+      [class.image-loading]="isImageLoading"
+      (load)="onImageLoad()"
+      class="image"
+    />
+  }
+</div>

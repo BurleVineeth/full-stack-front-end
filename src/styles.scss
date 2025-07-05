@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./theme/helper";
+
+body {
+  font-family: "unifysans", "Helvetica", "Arial", "Lato", sans-serif;
+  margin: 0px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.active-border {
+  color: helper.$highlight-color !important;
+  border-color: helper.$highlight-color !important;
+}
+
+.header {
+  font-size: helper.$title-font-size;
+  color: helper.$highlight-color;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padding-bottom {
+  padding-bottom: 10px;
+}

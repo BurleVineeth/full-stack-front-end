@@ -1,0 +1,36 @@
+<app-side-nav
+  [headerLinks]="headerLinks"
+  [showSideNav]="showSideNav"
+  (showSideNavChange)="closeSideNav($event)"
+></app-side-nav>
+<header>
+  <div class="header-container">
+    <div class="side-nav show-nav">
+      <div class="menu" (click)="openSideNav()">
+        <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+      </div>
+    </div>
+    <div class="app-logo">
+      <div class="app-title">
+        <span class="app-title-content" routerLink="">
+          <span class="highlight">M</span>anagement
+        </span>
+      </div>
+    </div>
+    <div class="links-container hide-header">
+      @for (
+        headerLink of headerLinks;
+        track headerLink.id;
+        let index = $index
+      ) {
+        <div
+          class="header-link"
+          [routerLink]="headerLink.link"
+          routerLinkActive="active-border"
+        >
+          {{ headerLink.name }}
+        </div>
+      }
+    </div>
+  </div>
+</header>

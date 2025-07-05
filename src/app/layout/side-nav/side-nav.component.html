@@ -1,0 +1,22 @@
+<div
+  [@sideNavAnimation]="showSideNav ? 'open' : 'closed'"
+  class="nav-container"
+>
+  <div class="content">
+    <div class="app-title">
+      <div class="title">
+        <span class="title-content" (click)="navigateToHome()">
+          <span class="highlight">M</span>anagement
+        </span>
+      </div>
+    </div>
+    <div class="app-links">
+      @for (headerLink of headerLinks; track headerLink.id) {
+        <div class="link" (click)="navigate(headerLink)">
+          {{ headerLink.name }}
+        </div>
+      }
+    </div>
+  </div>
+  <div class="blank-space" (click)="closeSideNav()"></div>
+</div>

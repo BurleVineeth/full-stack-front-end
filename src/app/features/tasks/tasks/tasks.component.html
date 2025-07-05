@@ -1,0 +1,35 @@
+<app-image
+  src="https://firebasestorage.googleapis.com/v0/b/onthespotapptestau.appspot.com/o/xeKngsdygs6IXL9d27vq%2Fimages%2F1723954375483_1hq5gchott1.jpeg?alt=media&token=5265e336-530e-4b27-bf0b-263dff56b6d5"
+  sizes="100vw"
+  alt="Site Building"
+  [height]="433"
+  [priority]="true"
+  [width]="800"
+></app-image>
+
+@if (canShowTaskForm) {
+  <app-modal (modalDismiss)="closeTaskForm()">
+    <app-add-task></app-add-task>
+  </app-modal>
+}
+
+<div class="add-task-container text-right padding-bottom">
+  <app-button
+    name="Add Task"
+    class="primary"
+    (onClick)="addTask()"
+  ></app-button>
+</div>
+@for (task of tasks; track $index) {
+  <div class="task-card">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p><strong>Due:</strong> {{ task.dueDate | date }}</p>
+    <p>
+      Status:
+      <span [ngStyle]="{ color: task.completed ? 'green' : 'red' }">
+        {{ task.completed ? "Completed" : "Pending" }}
+      </span>
+    </p>
+  </div>
+}

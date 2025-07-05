@@ -1,0 +1,40 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "ES2022",
+    "allowUnreachableCode": false,
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["app/core/*"],
+      "@features/*": ["app/features/*"],
+      "@layout/*": ["app/layout/*"],
+      "@pages/*": ["app/pages/*"],
+      "@shared/*": ["app/shared/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "forceAsyncBindings": true,
+    "disableTypeScriptVersionCheck": false
+  }
+}

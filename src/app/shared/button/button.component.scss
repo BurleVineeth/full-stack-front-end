@@ -1,0 +1,29 @@
+@use "helper";
+
+@mixin btnHighlighter($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
+}
+
+.btn {
+  &.primary {
+    @include btnHighlighter(helper.$highlight-color, helper.$basic-white);
+  }
+  &.basic {
+    @include btnHighlighter(helper.$basic-clear, helper.$black);
+  }
+
+  border: 1px solid helper.$backdrop;
+  padding: 12px 0;
+  font-size: helper.$basic-font-size;
+  margin-left: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  @media (max-width: helper.$breakpoint-mobile) {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
