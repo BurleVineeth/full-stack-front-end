@@ -19,19 +19,34 @@ export const DeskModalAnimation = trigger('deskModalAnimation', [
     style({
       transform: 'scaleX(0.05) scaleY(0)',
       opacity: 0,
-    }),
+    })
   ),
   state(
     '*',
     style({
       transform: 'scaleX(1) scaleY(1)',
       opacity: 1,
-    }),
+    })
   ),
-  transition('void => *', [
-    animate('300ms ease-out'), // Open animation
-  ]),
-  transition('* => void', [
-    animate('250ms ease-in'), // Close animation
-  ]),
+  transition('void => *', [animate('300ms ease-out')]),
+  transition('* => void', [animate('250ms ease-in')]),
+]);
+
+export const MobileModalAnimation = trigger('mobileModalAnimation', [
+  state(
+    'void',
+    style({
+      transform: 'translateY(-100%)',
+      opacity: 0,
+    })
+  ),
+  state(
+    '*',
+    style({
+      transform: 'translateY(0)',
+      opacity: 1,
+    })
+  ),
+  transition('void => *', [animate('300ms ease-out')]),
+  transition('* => void', [animate('250ms ease-in')]),
 ]);

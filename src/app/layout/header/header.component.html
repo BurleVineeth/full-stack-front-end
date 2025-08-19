@@ -1,8 +1,11 @@
-<app-side-nav
-  [headerLinks]="headerLinks"
-  [showSideNav]="showSideNav"
-  (showSideNavChange)="closeSideNav($event)"
-></app-side-nav>
+@defer {
+  <app-side-nav
+    [headerLinks]="headerLinks"
+    [showSideNav]="showSideNav"
+    (showSideNavChange)="closeSideNav($event)"
+  ></app-side-nav>
+}
+
 <header>
   <div class="header-container">
     <div class="side-nav show-nav">

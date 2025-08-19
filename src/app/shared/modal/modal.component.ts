@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { DeskModalAnimation } from '@core/constants';
+import { Component, EventEmitter, input, Output } from '@angular/core';
+import { DeskModalAnimation, MobileModalAnimation } from '@core/constants';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -11,10 +11,12 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
   imports: [FontAwesomeModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
-  animations: [DeskModalAnimation],
+  animations: [DeskModalAnimation, MobileModalAnimation],
 })
 export class ModalComponent {
   public isClosing: boolean = false;
+  public isMobile = input<boolean>(false);
+
   @Output() modalDismiss = new EventEmitter();
 
   constructor(library: FaIconLibrary) {

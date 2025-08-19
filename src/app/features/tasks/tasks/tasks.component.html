@@ -8,7 +8,7 @@
 ></app-image>
 
 @if (canShowTaskForm) {
-  <app-modal (modalDismiss)="closeTaskForm()">
+  <app-modal [isMobile]="true" (modalDismiss)="closeTaskForm()">
     <app-add-task></app-add-task>
   </app-modal>
 }
@@ -28,7 +28,7 @@
     <p>
       Status:
       <span [ngStyle]="{ color: task.completed ? 'green' : 'red' }">
-        {{ task.completed ? "Completed" : "Pending" }}
+        {{ task.completed ? 'Completed' : 'Pending' }}
       </span>
     </p>
   </div>

@@ -1,5 +1,20 @@
 <div class="modal-container" (click)="backDropDismiss()">
   @if (!isClosing) {
+    <!-- @if (isMobile()) { -->
+    <!-- <div
+      @mobileModalAnimation
+      class="modal-content"
+      (click)="stopPropagation($event)"
+      (@mobileModalAnimation.done)="onAnimationDone()"
+    >
+      <fa-icon
+        class="close-modal"
+        [icon]="['fas', 'close']"
+        (click)="closeModal()"
+      ></fa-icon>
+      <ng-content></ng-content>
+    </div> -->
+    <!-- } @else { -->
     <div
       @deskModalAnimation
       class="modal-content"
@@ -13,5 +28,6 @@
       ></fa-icon>
       <ng-content></ng-content>
     </div>
+    <!-- } -->
   }
 </div>
